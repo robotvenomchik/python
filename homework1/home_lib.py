@@ -36,7 +36,7 @@ def has_specific_charecters(value: str) -> bool:
     for i in x:
         for char in value:
             if i == char:
-                return False
+                return True
     return False
 
 
@@ -50,15 +50,16 @@ def is_valid_password_length(value: str) -> bool:
 def is_password_suituble(value: str) -> bool:
     if has_space(value):
         return False
-    if has_number(value):
-        return True
-    if has_big_leters(value):
-        return True
-    if has_small_leters(value):
-        return True
-    if has_specific_charecters(value):
-        return True
-    if is_valid_password_length(value):
-        return True
-    if has_asci(value):
-        return True
+    if not has_number(value):
+        return False
+    if not has_big_leters(value):
+        return False
+    if not has_small_leters(value):
+        return False
+    if not has_specific_charecters(value):
+        return False
+    if not is_valid_password_length(value):
+        return False
+    if not has_asci(value):
+        return False
+    return True
