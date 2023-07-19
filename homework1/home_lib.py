@@ -17,18 +17,18 @@ def has_number(value: str) -> bool:
         return False
 
 
-def has_big_Leters(value: str) -> bool:
+def has_big_leters(value: str) -> bool:
     for m in value:
         if m.isupper():
             return True
     return False
 
 
-def has_small_Leters(value: str) -> bool:
+def has_small_leters(value: str) -> bool:
     for m in value:
         if m.islower():
             return True
-        return False
+    return False
 
 
 def has_specific_charecters(value: str) -> bool:
@@ -37,11 +37,10 @@ def has_specific_charecters(value: str) -> bool:
         for char in value:
             if i == char:
                 return False
-            if i != char:
-                return True
+    return False
 
 
-def password_length(value: str) -> bool:
+def is_valid_password_length(value: str) -> bool:
     if len(value) < 8 and value.isascii():
         return False
     else:
@@ -53,13 +52,13 @@ def is_password_suituble(value: str) -> bool:
         return False
     if has_number(value):
         return True
-    if has_big_Leters(value):
+    if has_big_leters(value):
         return True
-    if has_small_Leters(value):
+    if has_small_leters(value):
         return True
     if has_specific_charecters(value):
         return True
-    if password_length(value):
+    if is_valid_password_length(value):
         return True
     if has_asci(value):
         return True
